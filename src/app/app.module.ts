@@ -11,13 +11,24 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { MaterialModule } from './material.module';
+import { CustomcounterComponent } from './component/customcounter/customcounter.component';
+import { HomeComponent } from './practice/home/home.component';
+import { ProductsComponent } from './practice/products/products.component';
+import { SubjectcompComponent } from './practice/subjectcomp/subjectcomp.component';
+import { MyServiceService } from './practice/my-service.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterbuttonComponent,
-    CounterdisplayComponent
+    CounterdisplayComponent,
+    CustomcounterComponent,
+    HomeComponent,
+    ProductsComponent,
+    SubjectcompComponent
   ],
   imports: [
     BrowserModule,
@@ -26,8 +37,9 @@ import { MaterialModule } from './material.module';
     EffectsModule.forRoot([]),
     MaterialModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MyServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
