@@ -17,6 +17,11 @@ import { ProductsComponent } from './practice/products/products.component';
 import { SubjectcompComponent } from './practice/subjectcomp/subjectcomp.component';
 import { MyServiceService } from './practice/my-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { BlogComponent } from './component/blog/blog.component';
+import { ParentComponent } from './component/parent/parent.component';
+import { blogReducer } from './shared/store/blog/blog.reducer';
 
 
 
@@ -28,18 +33,24 @@ import { HttpClientModule } from '@angular/common/http';
     CustomcounterComponent,
     HomeComponent,
     ProductsComponent,
-    SubjectcompComponent
+    SubjectcompComponent,
+    BlogComponent,ParentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({counter:counterReducer}),
+    StoreModule.forRoot({counter:counterReducer,blog:blogReducer}),
     EffectsModule.forRoot([]),
     MaterialModule,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    HttpClientModule
+    StoreDevtoolsModule.instrument({ maxAge: false, logOnly: environment.production }),
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [MyServiceService],
+  providers: [MyServiceService,
+    provideAnimations()
+    
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ }

@@ -1,0 +1,15 @@
+.header{
+    background-color:lightblue;
+    height:50px;
+    margin:none;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+.header a {
+    color:black;
+    font-size: 30px;
+    text-decoration: none;
+    font-style: inherit;
+    
+}

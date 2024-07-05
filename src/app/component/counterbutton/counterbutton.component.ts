@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { decrement, increment, reset } from 'src/app/shared/store/counter.action';
+import { changeChannalName, decrement, increment, reset } from 'src/app/shared/store/counter.action';
+import { counterModel } from 'src/app/shared/store/counter.model';
 
 @Component({
   selector: 'app-counterbutton',
@@ -8,10 +9,12 @@ import { decrement, increment, reset } from 'src/app/shared/store/counter.action
   styleUrls: ['./counterbutton.component.css']
 })
 export class CounterbuttonComponent implements OnInit {
+  changechannal!:string;
 
-  constructor(private store:Store<{counter:{counter:number}}>) { }
+  constructor(private store:Store<{counter:counterModel}>) { }
 
   ngOnInit(): void {
+    
   }
   onIncrement(){
   this.store.dispatch(increment())
@@ -22,5 +25,10 @@ export class CounterbuttonComponent implements OnInit {
   onReset(){
   this.store.dispatch(reset())
   }
+  onRename(){
+    this.store.dispatch(changeChannalName({channal:'welcome to StarPLus'}))
+    
+  }
+
 
 }
