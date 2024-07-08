@@ -22,6 +22,10 @@ import { FormsModule } from '@angular/forms';
 import { BlogComponent } from './component/blog/blog.component';
 import { ParentComponent } from './component/parent/parent.component';
 import { blogReducer } from './shared/store/blog/blog.reducer';
+import { Appstate } from './shared/store/Globel/app.state';
+import { AddblogComponent } from './component/addblog/addblog.component';
+
+
 
 
 
@@ -34,17 +38,19 @@ import { blogReducer } from './shared/store/blog/blog.reducer';
     HomeComponent,
     ProductsComponent,
     SubjectcompComponent,
-    BlogComponent,ParentComponent
+    BlogComponent,ParentComponent,
+    AddblogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({counter:counterReducer,blog:blogReducer}),
+    StoreModule.forRoot(Appstate),
     EffectsModule.forRoot([]),
     MaterialModule,
     StoreDevtoolsModule.instrument({ maxAge: false, logOnly: environment.production }),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [MyServiceService,
     provideAnimations()

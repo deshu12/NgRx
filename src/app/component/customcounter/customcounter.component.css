@@ -7,8 +7,8 @@ margin-right: 35%;
 }
 .customCounter .mat-card .mat-form-field label{
     padding-left: 20%;
-    /* background-color: gray; */
-}
-.customCounter .mat-card button{
+     background-color: gray; 
+ } 
+ .customCounter .mat-card button{
     width:100%
-}
+} 

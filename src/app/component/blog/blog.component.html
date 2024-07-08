@@ -1,1 +1,13 @@
+<div>
+    <button mat-raised-button color="primary"  (click)="onAddBlog()">Addblog</button>
 <h1>Technology blog</h1>
+<mat-card *ngFor="let item of blogValueList">
+    <mat-card-header>
+        <h1>{{item.title}}</h1>
+    </mat-card-header>
+        <mat-card-content>
+            <p>{{item.description}}</p>
+        </mat-card-content>
+   
+</mat-card>
+</div>

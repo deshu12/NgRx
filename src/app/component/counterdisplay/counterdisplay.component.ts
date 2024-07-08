@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { counterModel } from 'src/app/shared/store/counter.model';
 import { getCounter } from 'src/app/shared/store/counter.selector';
+import { AppstateModel } from 'src/app/shared/store/Globel/app.state.model';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { getCounter } from 'src/app/shared/store/counter.selector';
 })
 export class CounterdisplayComponent implements OnInit {
   
-  constructor(private store:Store<{counter:counterModel}>) { }
+  constructor(private store:Store<AppstateModel>) { }
   counterDisplay!:any
   channalName!:any;
   subscriptionValue!:Subscription;

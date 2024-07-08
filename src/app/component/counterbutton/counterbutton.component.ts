@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { changeChannalName, decrement, increment, reset } from 'src/app/shared/store/counter.action';
 import { counterModel } from 'src/app/shared/store/counter.model';
+import { AppstateModel } from 'src/app/shared/store/Globel/app.state.model';
 
 @Component({
   selector: 'app-counterbutton',
@@ -11,7 +12,7 @@ import { counterModel } from 'src/app/shared/store/counter.model';
 export class CounterbuttonComponent implements OnInit {
   changechannal!:string;
 
-  constructor(private store:Store<{counter:counterModel}>) { }
+  constructor(private store:Store<AppstateModel>) { }
 
   ngOnInit(): void {
     
